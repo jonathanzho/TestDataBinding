@@ -1,36 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools">
-
     <data>
         <variable
-          name="mainViewModel"
-          type="com.example.jonathan.testdatabinding.MainViewModel" />
+          name="myViewModel"
+          type="com.example.jonathan.testdatabinding.CalculationViewModel" />
     </data>
 
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:gravity="center"
+      android:layout_margin="15dp"
       android:orientation="vertical"
-      android:padding="50dp"
-      tools:context=".MainActivity">
+      tools:context=".MainActivity" >
 
-        <TextView
+        <EditText
+          android:id="@+id/a_value"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_gravity="center_vertical"
-          android:gravity="center_horizontal"
-          android:text="@{ mainViewModel.text }"
-          android:textSize="24sp" />
+          android:layout_margin="5dp"
+          android:layout_marginBottom="5dp"
+          android:ems="10"
+          android:text="@={myViewModel.a}"
+          android:hint="a value"
+          android:inputType="number"
+          android:layout_gravity="center_horizontal"
+          android:textSize="20sp"
+          android:textStyle="bold" />
+
+        <EditText
+          android:id="@+id/b_value"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="5dp"
+          android:layout_marginBottom="5dp"
+          android:ems="10"
+          android:text="@={myViewModel.b}"
+          android:hint="b value"
+          android:inputType="number"
+          android:layout_gravity="center_horizontal"
+          android:textSize="20sp"
+          android:textStyle="bold" />
 
         <Button
+          android:id="@+id/calculate_button"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="Update text"
-          android:onClick="@{ ()-> mainViewModel.updateText() }"/>
+          android:layout_gravity="center_horizontal"
+          android:text="@string/calculate"
+          android:layout_marginBottom="15dp"
+          android:onClick="@{()->myViewModel.calculateAddition()}"
+          android:textSize="20sp"
+          android:textStyle="bold" />
 
+        <TextView
+          android:id="@+id/addition_textview"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="5dp"
+          android:layout_marginBottom="5dp"
+          android:ems="10"
+          android:text="@={myViewModel.additionResult}"
+          android:gravity="center_horizontal"
+          android:textSize="20sp"
+          android:textStyle="bold" />
     </LinearLayout>
-
 </layout>
