@@ -16,10 +16,12 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onCreate")
 
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         mainViewModel = MainViewModel()
-
         binding.mainViewModel = mainViewModel
+
+        binding.lifecycleOwner = this
     }
 }
