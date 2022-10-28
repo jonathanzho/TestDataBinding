@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 /**
  * Use ViewModel to persist data after a configuration change.
  */
+// Primary constructor is like (...).
+// Inheritance is represented by <ChildClass> : <ParentClass>().
 class CalculationViewModel(private val calculation: Calculation) : ViewModel() {
     private val TAG: String = "TDB: CalculationViewModel"
 
