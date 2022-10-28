@@ -7,13 +7,12 @@ import androidx.lifecycle.ViewModel
 /**
  * Use ViewModel to persist data after a configuration change.
  */
-class CalculationViewModel(private val calculations: Calculations) : ViewModel() {
+class CalculationViewModel(private val calculation: Calculation) : ViewModel() {
     private val TAG: String = "TDB: CalculationViewModel"
 
     // Use LiveData for live updates:
     var a = MutableLiveData<String>()
     var b = MutableLiveData<String>()
-
     var additionResult = MutableLiveData<String>()
 
     fun calculateAddition() {
@@ -23,7 +22,7 @@ class CalculationViewModel(private val calculations: Calculations) : ViewModel()
         val bValue = b.value?.toInt()
 
         if (aValue != null && bValue != null) {
-            val addition = calculations.calculateAddition(aValue, bValue)
+            val addition = calculation.calculateAddition(aValue, bValue)
             additionResult.value = addition.toString()
         } else {
             Log.w(TAG, "calculateAddition: Please enter values for a and/or b")
