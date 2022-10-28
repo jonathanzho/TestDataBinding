@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Demo | Data Binding</string>
+    <string name="app_name">MVVM | Data Binding | Live Data</string>
     <string name="calculate_addition">Calculate Addition</string>
 </resources>
