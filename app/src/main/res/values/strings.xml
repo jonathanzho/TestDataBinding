@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Demo | Data Binding</string>
-    <string name="calculate">Calculate</string>
+    <string name="calculate_addition">Calculate Addition</string>
 </resources>
